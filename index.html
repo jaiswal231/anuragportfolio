@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Primary Meta Tags -->
+  <title>Anurag Prasad Sah — Aspiring Software Developer | B.Tech CSE</title>
+  <meta name="title" content="Anurag Prasad Sah — Aspiring Software Developer | B.Tech CSE">
+  <meta name="description" content="Personal portfolio of Anurag Prasad Sah, a first-year B.Tech Computer Science and Engineering student at Shoolini University. Exploring programming, web development, algorithms, and tech foundations.">
+  <meta name="keywords" content="Anurag Prasad Sah, Shoolini University, Computer Science, B.Tech CSE, Portfolio, Software Developer, C++, Python, Web Development">
+  <meta name="author" content="Anurag Prasad Sah">
+  <meta name="theme-color" content="#07090e">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Anurag Prasad Sah — Aspiring Software Developer">
+  <meta property="og:description" content="First-year B.Tech CSE student at Shoolini University. Building strong fundamentals in programming, computer science, and software engineering.">
+  <meta property="og:url" content="https://anurag.dev/">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Preconnect Google Fonts for High Performance Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#mainContent" class="skip-link">Skip to main content</a>
+
+  <!-- Ambient Glowing Background Canvas & Mesh -->
+  <div class="bg-mesh-container" aria-hidden="true">
+    <div class="bg-mesh-glow-1"></div>
+    <div class="bg-mesh-glow-2"></div>
+    <div class="bg-mesh-glow-3"></div>
+    <div class="bg-grid-pattern"></div>
+    <canvas id="particleCanvas"></canvas>
+  </div>
+
+  <!-- Top Scroll Progress Indicator -->
+  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       1. NAVIGATION BAR
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" id="brandLogo" aria-label="Anurag Prasad Sah Homepage">
+        <div class="brand-icon-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span>ANURAG</span><span class="brand-accent">.DEV</span>
+        </div>
+        <span class="brand-status-dot" title="Actively Learning & Available" aria-label="Online status: active"></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active" id="navLinkHero">Home</a></li>
+          <li><a href="#about" class="nav-link" id="navLinkAbout">About</a></li>
+          <li><a href="#education" class="nav-link" id="navLinkEducation">Education</a></li>
+          <li><a href="#skills" class="nav-link" id="navLinkSkills">Skills</a></li>
+          <li><a href="#projects" class="nav-link" id="navLinkProjects">Projects</a></li>
+          <li><a href="#exploring" class="nav-link" id="navLinkExploring">Journey</a></li>
+          <li><a href="#contact" class="nav-link" id="navLinkContact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <!-- Theme Accent Switcher -->
+        <button class="theme-toggle-btn" id="themeAccentBtn" title="Switch Theme Glow Accent" aria-label="Toggle theme color accent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- CTA Resume Summary Button -->
+        <a href="#contact" class="nav-cta-btn" id="navCtaContact">
+          <span>Get In Touch</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Open mobile menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Responsive Mobile Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+      <div class="mobile-drawer-header">
+        <div class="brand-logo">
+          <span>ANURAG</span><span class="brand-accent">.DEV</span>
+        </div>
+        <button class="modal-close-btn" id="mobileCloseBtn" aria-label="Close mobile menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#education" class="mobile-nav-link">Education</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#exploring" class="mobile-nav-link">Learning Journey</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div style="margin-top: auto; padding-top: 24px; border-top: 1px solid var(--border-subtle);">
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">First Year B.Tech CSE • Shoolini University</p>
+        <a href="#contact" class="btn btn-primary" style="width: 100%;">Connect With Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN CONTENT
+       ========================================================================= -->
+  <main id="mainContent">
+
+    <!-- =======================================================================
+         2. HERO SECTION
+         ======================================================================= -->
+    <section class="section hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Left Column: Introduction & Headline -->
+          <div class="hero-content-col">
+            <!-- Student Status Badge -->
+            <div class="hero-badge">
+              <span class="hero-badge-pulse" aria-hidden="true"></span>
+              <span>First-Year B.Tech CSE @ Shoolini University</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="hero-headline">
+              Hi, I'm <span class="text-gradient">Anurag Prasad Sah</span>.
+            </h1>
+
+            <!-- Professional Subtitle -->
+            <div class="hero-title-role">
+              <span>Computer Science Student</span>
+              <span style="color: var(--text-muted);">|</span>
+              <span class="role-tag">Aspiring Developer</span>
+            </div>
+
+            <!-- Introduction Paragraph -->
+            <p class="hero-intro">
+              I'm a first-year B.Tech CSE student at Shoolini University,
+              exploring programming, software development, and innovative
+              technology. I'm learning, experimenting, and building the
+              foundation for my future in tech.
+            </p>
+
+            <!-- Hero Action Buttons -->
+            <div class="hero-cta-group">
+              <a href="#about" class="btn btn-primary" id="btnExploreJourney">
+                <span>Explore My Journey</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+              <a href="#contact" class="btn btn-secondary" id="btnHeroContact">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>Get In Touch</span>
+              </a>
+            </div>
+
+            <!-- Transparency & Authenticity Strip -->
+            <div class="hero-stats-strip">
+              <div class="hero-stat-item">
+                <span class="hero-stat-icon">✓</span>
+                <span><strong>100% Genuine</strong> Journey</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-icon">⚡</span>
+                <span><strong>Core CS</strong> Foundations</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-icon">🚀</span>
+                <span><strong>Day 1</strong> of Tech Sprint</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Developer Terminal / 3D Composition -->
+          <div class="hero-visual-wrapper">
+            <!-- Floating Orbiting Badges -->
+            <div class="floating-badge badge-float-1" aria-hidden="true">
+              <span>&lt;C++ / Core /&gt;</span>
+            </div>
+            <div class="floating-badge badge-float-2" aria-hidden="true">
+              <span>{ Python }</span>
+            </div>
+            <div class="floating-badge badge-float-3" aria-hidden="true">
+              <span>/* Git &amp; CLI */</span>
+            </div>
+
+            <!-- Interactive Terminal Card -->
+            <div class="hero-terminal-card" id="heroTerminal">
+              <!-- Window Bar -->
+              <div class="terminal-header">
+                <div class="terminal-dots" aria-hidden="true">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <!-- Interactive Tabs -->
+                <div style="display: flex; gap: 6px;">
+                  <button class="terminal-tab terminal-tab-btn active" data-file="profile.json" aria-label="View profile.json code">
+                    <span style="color:#f59e0b;">{}</span> profile.json
+                  </button>
+                  <button class="terminal-tab terminal-tab-btn" data-file="main.cpp" aria-label="View main.cpp code">
+                    <span style="color:#38bdf8;">++</span> main.cpp
+                  </button>
+                  <button class="terminal-tab terminal-tab-btn" data-file="status.sh" aria-label="View status.sh code">
+                    <span style="color:#34d399;">$</span> status.sh
+                  </button>
+                </div>
+                <div class="terminal-status" aria-hidden="true">
+                  <span class="section-tag-dot" style="width:5px; height:5px;"></span> live
+                </div>
+              </div>
+
+              <!-- Terminal Code Body -->
+              <pre class="terminal-body" id="terminalCodeDisplay" tabindex="0" aria-label="Code terminal snippet preview"><code><span class="syntax-keyword">{</span>
+  <span class="syntax-prop">"name"</span>: <span class="syntax-string">"Anurag Prasad Sah"</span>,
+  <span class="syntax-prop">"title"</span>: <span class="syntax-string">"Aspiring Software Developer"</span>,
+  <span class="syntax-prop">"university"</span>: <span class="syntax-string">"Shoolini University"</span>,
+  <span class="syntax-prop">"degree"</span>: <span class="syntax-string">"B.Tech in Computer Science"</span>,
+  <span class="syntax-prop">"year"</span>: <span class="syntax-string">"First Year (2024-2028)"</span>,
+  <span class="syntax-prop">"status"</span>: <span class="syntax-string">"Building Solid Fundamentals"</span>,
+  <span class="syntax-prop">"projectsCompleted"</span>: <span class="syntax-number">0</span>,
+  <span class="syntax-prop">"curiosityLevel"</span>: <span class="syntax-string">"Infinity"</span>
+<span class="syntax-keyword">}</span><span class="terminal-cursor"></span></code></pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         3. ABOUT SECTION
+         ======================================================================= -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header reveal">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>Who I Am</span>
+          </div>
+          <h2 class="section-title">Enthusiasm, Curiosity &amp; Relentless Learning</h2>
+          <p class="section-desc">
+            A glimpse into my mindset, motivation, and the driving passion behind my decision to pursue Computer Science and Engineering.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Column: Storytelling Narrative -->
+          <div class="about-narrative reveal">
+            <p class="about-lead">
+              My journey into computer science began with an innate desire to understand the logic behind computing systems. Instead of treating software as black magic, I want to uncover the mathematical elegance and engineering discipline that powers it.
+            </p>
+            <p>
+              Currently enrolled as a first-year B.Tech CSE undergraduate at <strong>Shoolini University</strong>, I spend my time understanding the foundational building blocks of computation: how data flows through memory, how algorithms solve problems in finite steps, and how clean code creates enduring software.
+            </p>
+            <p>
+              I take pride in genuine, steady craftsmanship. Rather than rushing into hype or displaying unearned credentials, I prioritize consistency, deep work, and transparent growth. Every lecture, laboratory session, and late-night debugging session is a brick in the foundation of my future in technology.
+            </p>
+
+            <div class="about-quote-box">
+              <p>"Every complex architecture began as a simple, humble program. Master the fundamentals, stay endlessly curious, and embrace the bugs as teachers."</p>
+            </div>
+          </div>
+
+          <!-- Right Column: Bento Information Card -->
+          <div class="about-bento-card glass-card reveal reveal-delay-2">
+            <div class="bento-header">
+              <span class="bento-tag">STUDENT OVERVIEW</span>
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--status-emerald);">● Active Enrollment</span>
+            </div>
+
+            <div class="bento-list">
+              <div class="bento-item">
+                <div class="bento-icon-box" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                </div>
+                <div class="bento-item-content">
+                  <h4>Academic Base</h4>
+                  <p>Shoolini University • Solan, Himachal Pradesh</p>
+                </div>
+              </div>
+
+              <div class="bento-item">
+                <div class="bento-icon-box" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <div class="bento-item-content">
+                  <h4>Degree &amp; Specialization</h4>
+                  <p>B.Tech Computer Science and Engineering (1st Year)</p>
+                </div>
+              </div>
+
+              <div class="bento-item">
+                <div class="bento-icon-box" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                </div>
+                <div class="bento-item-content">
+                  <h4>Daily Practice Focus</h4>
+                  <p>C / C++ Syntax, Logic Building &amp; Web Basics</p>
+                </div>
+              </div>
+
+              <div class="bento-item">
+                <div class="bento-icon-box" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                </div>
+                <div class="bento-item-content">
+                  <h4>Core Philosophy</h4>
+                  <p>1% Better Every Day Through Consistent Coding</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bento Footer Metrics -->
+            <div class="bento-footer-metrics">
+              <div class="metric-pill">
+                <div class="metric-value">Year 1</div>
+                <div class="metric-label">Undergraduate</div>
+              </div>
+              <div class="metric-pill">
+                <div class="metric-value">0 Fake</div>
+                <div class="metric-label">100% Genuine</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. EDUCATION SECTION (Vertical Timeline)
+         ======================================================================= -->
+    <section class="section education-section" id="education">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header reveal">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>Academic Milestones</span>
+          </div>
+          <h2 class="section-title">Education &amp; Academic Background</h2>
+          <p class="section-desc">
+            The formal institutions and academic milestones that have shaped my scientific grounding and analytical reasoning.
+          </p>
+        </div>
+
+        <!-- Vertical Timeline -->
+        <div class="education-timeline-wrapper">
+          <div class="timeline-line" aria-hidden="true"></div>
+          <div class="timeline-list" id="educationTimelineList">
+            <!-- 1. Shoolini University -->
+            <div class="timeline-item active reveal reveal-delay-1">
+              <div class="timeline-marker" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              </div>
+              <div class="timeline-card glass-card">
+                <div class="timeline-card-header">
+                  <div>
+                    <h3 class="timeline-institution">Shoolini University</h3>
+                    <div class="timeline-qualification">B.Tech in Computer Science and Engineering</div>
+                  </div>
+                  <span class="timeline-badge timeline-badge-active">Currently Pursuing (First Year)</span>
+                </div>
+                <p class="timeline-desc">Immersed in foundational computer science coursework, engineering mathematics, structured programming, and hands-on laboratory workshops.</p>
+                <div class="timeline-tags">
+                  <span class="timeline-tag">C / C++ Programming</span>
+                  <span class="timeline-tag">Computational Thinking</span>
+                  <span class="timeline-tag">Engineering Mathematics</span>
+                  <span class="timeline-tag">Web Basics</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Om National Academy -->
+            <div class="timeline-item reveal reveal-delay-2">
+              <div class="timeline-marker" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              </div>
+              <div class="timeline-card glass-card">
+                <div class="timeline-card-header">
+                  <div>
+                    <h3 class="timeline-institution">Om National Academy</h3>
+                    <div class="timeline-qualification">Class 12 (+2) — Senior Secondary</div>
+                  </div>
+                  <span class="timeline-badge timeline-badge-completed">Completed</span>
+                </div>
+                <p class="timeline-desc">Completed higher secondary education in Science stream with deep focus on Physics, Chemistry, and Advanced Mathematics.</p>
+                <div class="timeline-tags">
+                  <span class="timeline-tag">Science Stream</span>
+                  <span class="timeline-tag">Advanced Mathematics</span>
+                  <span class="timeline-tag">Analytical Foundations</span>
+                  <span class="timeline-tag">Physics</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Shubha Tara Secondary School -->
+            <div class="timeline-item reveal reveal-delay-3">
+              <div class="timeline-marker" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              </div>
+              <div class="timeline-card glass-card">
+                <div class="timeline-card-header">
+                  <div>
+                    <h3 class="timeline-institution">Shubha Tara Secondary School</h3>
+                    <div class="timeline-qualification">Class 10 — Secondary Education</div>
+                  </div>
+                  <span class="timeline-badge timeline-badge-completed">Completed</span>
+                </div>
+                <p class="timeline-desc">Built strong academic grounding in general sciences, logical reasoning, mathematics, and English communication.</p>
+                <div class="timeline-tags">
+                  <span class="timeline-tag">Secondary School Certificate</span>
+                  <span class="timeline-tag">Core Sciences</span>
+                  <span class="timeline-tag">Mathematics Foundation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. SKILLS SECTION
+         ======================================================================= -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header reveal">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>Technical Foundation</span>
+          </div>
+          <h2 class="section-title">Skills &amp; Technologies In Progress</h2>
+          <p class="section-desc">
+            An authentic representation of languages, developer tools, and computing concepts I am actively learning and practicing. Zero fabricated proficiency percentages.
+          </p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="skills-filter-nav reveal">
+          <button class="skill-filter-btn active" data-filter="all">All Skills</button>
+          <button class="skill-filter-btn" data-filter="programming">Programming</button>
+          <button class="skill-filter-btn" data-filter="web">Web Foundations</button>
+          <button class="skill-filter-btn" data-filter="tools">Developer Tools</button>
+          <button class="skill-filter-btn" data-filter="cs">CS Core</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid" id="skillsGrid">
+          <!-- Dynamically populated and filtered via app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. PROJECTS SECTION (Transparent 0 Projects Empty State)
+         ======================================================================= -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header reveal">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>Project Portfolio</span>
+          </div>
+          <h2 class="section-title">My Journey Starts Here</h2>
+          <p class="section-desc">
+            Honest engineering starts with zero finished applications and infinite drive. Here is what is currently being planned.
+          </p>
+        </div>
+
+        <!-- Empty State Showcase Card -->
+        <div class="projects-empty-card glass-card reveal">
+          <!-- Counter Badge -->
+          <div class="projects-badge-counter">
+            <span class="section-tag-dot" style="background:#f59e0b; box-shadow: 0 0 8px #f59e0b;"></span>
+            <span>STATUS: <strong>0 COMPLETED PROJECTS</strong> • IN INCEPTION</span>
+          </div>
+
+          <!-- Futuristic Incubator Visual -->
+          <div class="blueprint-visual-box" aria-hidden="true">
+            <div class="blueprint-ring-outer"></div>
+            <div class="blueprint-ring-inner"></div>
+            <div class="blueprint-center-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Empty State Headline & Description -->
+          <h3 class="empty-headline">Great Things Start With One Idea.</h3>
+          <p class="empty-description">
+            I'm currently learning and preparing to build my first project. This space will soon showcase my experiments, ideas, and real-world applications.
+          </p>
+
+          <!-- Interactive Action Buttons -->
+          <div class="empty-actions-row">
+            <button class="btn btn-primary" id="openIdeaBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="16"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+              </svg>
+              <span>Suggest a Project Idea</span>
+            </button>
+            <a href="#exploring" class="btn btn-secondary">
+              <span>View What I'm Exploring</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Upcoming Blueprints Roadmap -->
+          <div class="roadmap-strip-title">Upcoming Blueprints in Preparation</div>
+          <div class="project-roadmap-grid" id="projectRoadmapGrid">
+            <!-- Dynamically populated from js/config.js via app.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         7. CURRENTLY EXPLORING (Learning Journey)
+         ======================================================================= -->
+    <section class="section exploring-section" id="exploring">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header reveal">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>Continuous Curiosity</span>
+          </div>
+          <h2 class="section-title">Currently Exploring</h2>
+          <p class="section-desc">
+            Four key domains I am actively exploring to lay the groundwork for my future software engineering and problem-solving pursuits.
+          </p>
+        </div>
+
+        <!-- Exploring Cards Grid -->
+        <div class="exploring-grid" id="exploringGrid">
+          <!-- Dynamically populated from js/config.js via app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         8. CONTACT SECTION
+         ======================================================================= -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header reveal">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>Get In Touch</span>
+          </div>
+          <h2 class="section-title">Have an Idea? Let's Connect.</h2>
+          <p class="section-desc">
+            Whether you want to share mentorship advice for a first-year student, discuss technology, collaborate on upcoming open-source projects, or simply say hello — my inbox is always open.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left Column: Contact Cards & Socials -->
+          <div class="contact-info-panel reveal">
+            <!-- Email Item Card -->
+            <div class="contact-card-item glass-card">
+              <div class="contact-icon-box" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-card-content">
+                <h4>Email Address</h4>
+                <p>Feel free to send queries or mentorship suggestions:</p>
+                <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px;">
+                  <a href="mailto:anuragprasadsah.dev@gmail.com" class="contact-value-link" id="emailLink">anuragprasadsah.dev@gmail.com</a>
+                  <button class="contact-copy-btn" id="copyEmailBtn" aria-label="Copy email address to clipboard">Copy</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- University Location Card -->
+            <div class="contact-card-item glass-card">
+              <div class="contact-icon-box" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-card-content">
+                <h4>University Campus</h4>
+                <p>Undergraduate Residence &amp; Lab Work:</p>
+                <span class="contact-value-link" style="color: var(--text-secondary);">Shoolini University, Solan, Himachal Pradesh</span>
+              </div>
+            </div>
+
+            <!-- Profiles & Links -->
+            <div class="contact-card-item glass-card">
+              <div class="contact-icon-box" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </div>
+              <div class="contact-card-content">
+                <h4>Professional Networks</h4>
+                <p>Connect with me across platforms (Editable links):</p>
+                <div class="socials-row">
+                  <a href="https://github.com/anuragsah-dev" target="_blank" rel="noopener noreferrer" class="social-pill-btn" id="githubProfileLink">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <span>GitHub</span>
+                  </a>
+                  <a href="https://linkedin.com/in/anurag-prasad-sah" target="_blank" rel="noopener noreferrer" class="social-pill-btn" id="linkedinProfileLink">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Contact Form -->
+          <div class="contact-form-card glass-card reveal reveal-delay-2">
+            <h3 style="font-size: 1.4rem; margin-bottom: 8px;">Send a Direct Message</h3>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 24px;">I respond promptly to student discussions, project ideas, and advice.</p>
+
+            <form class="contact-form" id="contactForm">
+              <div class="form-group">
+                <label for="senderName" class="form-label">
+                  <span>Your Name</span>
+                  <span style="color: var(--accent-cyan); font-size: 0.75rem;">* Required</span>
+                </label>
+                <input type="text" id="senderName" class="form-input" placeholder="e.g. Alex Morgan" required autocomplete="name">
+              </div>
+
+              <div class="form-group">
+                <label for="senderEmail" class="form-label">
+                  <span>Your Email Address</span>
+                  <span style="color: var(--accent-cyan); font-size: 0.75rem;">* Required</span>
+                </label>
+                <input type="email" id="senderEmail" class="form-input" placeholder="e.g. alex@example.com" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label for="senderSubject" class="form-label">
+                  <span>Subject</span>
+                </label>
+                <input type="text" id="senderSubject" class="form-input" placeholder="e.g. Project Idea / First-Year Advice">
+              </div>
+
+              <div class="form-group">
+                <label for="senderMessage" class="form-label">
+                  <span>Your Message</span>
+                  <span style="color: var(--accent-cyan); font-size: 0.75rem;">* Required</span>
+                </label>
+                <textarea id="senderMessage" class="form-textarea" placeholder="Write your message or words of encouragement here..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="btnSubmitContact" style="width: 100%;">
+                <span>Transmit Message</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       9. FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="brand-logo" style="margin-bottom: 8px;">
+            <span>ANURAG</span><span class="brand-accent">.DEV</span>
+          </div>
+          <p class="footer-quote">
+            "Every expert was once a beginner. The journey begins with curiosity, consistency, and the first line of code."
+          </p>
+        </div>
+
+        <button class="footer-back-to-top" id="backToTopBtn" aria-label="Scroll back to top">
+          <span>Back to Top</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          Designed &amp; Built by <strong style="color: var(--text-primary);">Anurag Prasad Sah</strong>
+        </div>
+        <div>
+          &copy; <span id="currentYear">2026</span> Anurag Prasad Sah • All Rights Reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       10. MODAL & TOAST
+       ========================================================================= -->
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Suggest Project Idea Modal -->
+  <div class="modal-backdrop" id="ideaModal" role="dialog" aria-modal="true" aria-labelledby="modalIdeaTitle">
+    <div class="modal-dialog glass-card">
+      <div class="modal-header">
+        <h3 id="modalIdeaTitle" style="font-size: 1.25rem;">Suggest a Project Idea</h3>
+        <button class="modal-close-btn" id="closeIdeaBtn" aria-label="Close dialog">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px;">
+        As a first-year student preparing to build my first software application, I welcome challenges and project ideas! What would you recommend I build?
+      </p>
+      <form id="ideaForm">
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label for="projectIdeaInput" class="form-label">Project Concept or Challenge</label>
+          <textarea id="projectIdeaInput" class="form-textarea" placeholder="e.g. Build a CLI student expense analyzer or a sorting algorithm visualizer..." required style="min-height: 100px;"></textarea>
+        </div>
+        <div class="form-group" style="margin-bottom: 24px;">
+          <label for="ideaSuggesterName" class="form-label">Your Name or Handle (Optional)</label>
+          <input type="text" id="ideaSuggesterName" class="form-input" placeholder="e.g. Senior Dev / Peer">
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 12px;">
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <span>Submit Idea</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

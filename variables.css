@@ -1,0 +1,104 @@
+/* ==========================================================================
+   DESIGN TOKENS & SYSTEM VARIABLES - ANURAG.DEV
+   ========================================================================== */
+
+:root {
+  /* Color Palette - Deep Midnight Space Theme */
+  --bg-primary: #07090e;
+  --bg-secondary: #0b1120;
+  --bg-tertiary: #111827;
+  --bg-card: rgba(15, 23, 42, 0.7);
+  --bg-card-hover: rgba(30, 41, 59, 0.85);
+  --bg-glass: rgba(13, 20, 36, 0.65);
+  --bg-glass-input: rgba(15, 23, 42, 0.6);
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-glow: rgba(56, 189, 248, 0.3);
+  --border-glow-purple: rgba(192, 132, 252, 0.3);
+
+  /* Primary Accent: Electric Cyan & Sky Blue */
+  --accent-cyan: #38bdf8;
+  --accent-cyan-rgb: 56, 189, 248;
+  --accent-cyan-hover: #0284c7;
+
+  /* Secondary Accent: Electric Purple & Violet */
+  --accent-purple: #a855f7;
+  --accent-purple-rgb: 168, 85, 247;
+  --accent-purple-light: #c084fc;
+
+  /* Indigo & Blue Linkers */
+  --accent-indigo: #6366f1;
+  --accent-indigo-rgb: 99, 102, 241;
+
+  /* Status Colors */
+  --status-emerald: #10b981;
+  --status-amber: #f59e0b;
+  --status-rose: #f43f5e;
+
+  /* Gradients */
+  --grad-primary: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+  --grad-accent: linear-gradient(135deg, #60a5fa 0%, #a855f7 100%);
+  --grad-subtle: linear-gradient(180deg, rgba(56, 189, 248, 0.12) 0%, rgba(168, 85, 247, 0.04) 100%);
+  --grad-card-border: linear-gradient(135deg, rgba(56, 189, 248, 0.4), rgba(168, 85, 247, 0.2), rgba(255, 255, 255, 0.05));
+  --grad-glow: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.15), transparent 70%);
+
+  /* Typography */
+  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace;
+
+  /* Text Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverted: #020617;
+
+  /* Shadows & Glows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+  --glow-cyan: 0 0 35px -5px rgba(56, 189, 248, 0.35);
+  --glow-purple: 0 0 35px -5px rgba(168, 85, 247, 0.35);
+  --glow-subtle: 0 0 20px 0 rgba(56, 189, 248, 0.15);
+
+  /* Layout & Spacing */
+  --container-max: 1200px;
+  --nav-height: 72px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --trans-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --trans-base: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --trans-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --trans-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Z-Index Hierarchy */
+  --z-background: -1;
+  --z-canvas: 0;
+  --z-normal: 1;
+  --z-sticky: 100;
+  --z-drawer: 200;
+  --z-modal: 500;
+  --z-toast: 1000;
+  --z-cursor: 9999;
+}
+
+/* Light Accent Variations (Configurable via UI) */
+[data-theme-accent="purple"] {
+  --accent-cyan: #c084fc;
+  --accent-cyan-rgb: 192, 132, 252;
+  --glow-cyan: 0 0 35px -5px rgba(192, 132, 252, 0.4);
+}
+
+[data-theme-accent="emerald"] {
+  --accent-cyan: #34d399;
+  --accent-cyan-rgb: 52, 211, 153;
+  --glow-cyan: 0 0 35px -5px rgba(52, 211, 153, 0.4);
+}
